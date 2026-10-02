@@ -1,0 +1,15 @@
+# Entorno
+.env
+.env.*
+!.env.example
+
+# Build / cache
+dist/
+.cache/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

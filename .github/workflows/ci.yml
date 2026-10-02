@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Validar guia y landing
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validar que landing_page.html parsea
+        run: |
+          python -c "
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class V(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.stack = []
+                  self.err = []
+              def handle_starttag(self, tag, attrs):
+                  if tag not in ('meta', 'link', 'img', 'br', 'hr', 'input', 'source'):
+                      self.stack.append(tag)
+              def handle_endtag(self, tag):
+                  if self.stack and self.stack[-1] == tag:
+                      self.stack.pop()
+                  elif tag in self.stack:
+                      self.err.append('cierre inesperado: ' + tag)
+
+          src = Path('landing_page.html').read_text(encoding='utf-8')
+          v = V(); v.feed(src); v.close()
+          if v.err:
+              raise SystemExit('::error::' + '; '.join(v.err))
+          if v.stack:
+              raise SystemExit('::error::sin cerrar: ' + ', '.join(v.stack))
+          print('OK: landing_page.html valido')
+          "
+
+      - name: Comprobar que los enlaces internos de los .md existen
+        run: |
+          python -c "
+          import re, sys
+          from pathlib import Path
+
+          faltan = []
+          for md in Path('.').glob('*.md'):
+              texto = md.read_text(encoding='utf-8')
+              for m in re.finditer(r'\[[^\]]*\]\(([^)]+)\)', texto):
+                  destino = m.group(1).split('#')[0].strip()
+                  if not destino or destino.startswith(('http://', 'https://', 'mailto:')):
+                      continue
+                  if not Path(destino).exists():
+                      faltan.append(f'{md.name} -> {destino}')
+          if faltan:
+              print('::error::enlaces rotos: ' + '; '.join(faltan))
+              sys.exit(1)
+          print('OK: sin enlaces internos rotos')
+          "

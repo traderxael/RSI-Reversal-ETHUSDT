@@ -1,5 +1,8 @@
 # Sistema RSI Reverso ETHUSDT — v1.0
 
+> **Aviso:** contenido educativo. No es asesoría financiera; el trading puede
+> perder todo el capital.
+
 Guía completa + Plantillas de journal + Métricas semanales + Checklist + Prompt IA para trading de ETH/USDT en timeframe 4H con enfoque de reversión de RSI.
 
 ## Qué incluye
@@ -25,8 +28,8 @@ Uso personal. Para licencia comercial, contactar al autor.
 
 ## Autor
 
-**traderxael** | @trader.xael (TikTok) | Calama, Chile
-Email: 289214531+traderxael@users.noreply.github.com | Telegram: @DREstebot
+**traderxael** | @trader.xael (TikTok) | Chile
+Contacto: GitHub @traderxael | Telegram: @DREstebot
 
 ---
 

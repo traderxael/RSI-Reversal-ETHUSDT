@@ -76,8 +76,8 @@ Uso personal. Para licencia comercial (rehuegue, use en productos propios), cont
 
 ## Autor
 
-**traderxael** | @trader.xael (TikTok) | Calama, Chile
-Email: 289214531+traderxael@users.noreply.github.com
+**traderxael** | @trader.xael (TikTok) | Chile
+Contacto: GitHub @traderxael
 Telegram: @DREstebot
 
 ---

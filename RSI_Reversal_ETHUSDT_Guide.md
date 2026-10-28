@@ -1,6 +1,6 @@
 # Guía del Sistema RSI Reverso ETHUSDT — Trading 4H
 
-Versión 1.0 | Autor: traderxael | @trader.xael | Calama, Chile
+Versión 1.0 | Autor: traderxael | @trader.xael | Chile
 
 ---
 
@@ -339,7 +339,7 @@ Operar con responsabilidad:
 - Documentar todo
 - Revisar y ajustar basado en datos, no en emociones
 
-**Autor:** traderxael | @trader.xael | Calama, Chile
+**Autor:** traderxael | @trader.xael | Chile
 **Contacto:** 289214531+traderxael@users.noreply.github.com | Telegram: @DREstebot
 **Licencia:** Uso personal. Para licencia comercial, contactar al autor.
 

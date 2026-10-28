@@ -340,7 +340,7 @@ Operar con responsabilidad:
 - Revisar y ajustar basado en datos, no en emociones
 
 **Autor:** traderxael | @trader.xael | Chile
-**Contacto:** 289214531+traderxael@users.noreply.github.com | Telegram: @DREstebot
+**Contacto:** GitHub @traderxael | Telegram: @DREstebot
 **Licencia:** Uso personal. Para licencia comercial, contactar al autor.
 
 ---
